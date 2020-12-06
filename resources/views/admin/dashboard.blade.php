@@ -16,7 +16,7 @@
             <h3 class="card-title border-bottom">Course Management</h3>
             <p class="card-text">View course, add new course and edit course information</p>
             <div class="text-right">
-                <a href="{{ url('course') }}" class="btn btn-primary">Open Course Management</a>
+                <a href="{{ url('courses') }}" class="btn btn-primary">Open Course Management</a>
             </div>
         </div>
     </div>

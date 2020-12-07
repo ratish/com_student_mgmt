@@ -4,10 +4,10 @@
 <div class="card">
     <div class="card-body">
         @if(session('feedback'))
-        <div class="alert alert-success">{{ session('feedback') }}</div>
+        <div class="alert alert-success"><i class="fas fa-check fa-lg"></i> {{ session('feedback') }}</div>
         @endif
         <div class="float-right"><a href="{{ url('enrollments/' . $course->id . '/create') }}"
-                class="btn btn-primary">Enroll Students</a>
+                class="btn btn-primary"><i class="fas fa-address-card fa-lg"></i> Enroll Students</a>
         </div>
         <h4 class="card-title">Currently Enrolled Students for <span class="text-info">{{ $course->course_name }}</span>
         </h4>
@@ -34,7 +34,8 @@
                             method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" name="unenrollBtn" class="btn btn-link">Unenroll</button>
+                            <button type="submit" name="unenrollBtn" class="btn btn-danger "><i
+                                    class="fas fa-user-times"></i> Unenroll</button>
                         </form>
                     </td>
                 </tr>

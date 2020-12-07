@@ -102,20 +102,12 @@
   !*** ./resources/js/app.js ***!
   \*****************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-/***/ }),
-
-/***/ "./resources/js/bootstrap.js":
-/*!***********************************!*\
-  !*** ./resources/js/bootstrap.js ***!
-  \***********************************/
-/*! no static exports found */
 /***/ (function(module, exports) {
 
-
+flatpickr(".js-date-field", {
+  dateFormat: "m/d/Y",
+  allowInput: true
+});
 
 /***/ }),
 

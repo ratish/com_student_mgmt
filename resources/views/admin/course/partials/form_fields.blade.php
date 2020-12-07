@@ -19,9 +19,9 @@
 <?php $fieldID = 'startDate'; ?>
 <div class="form-group">
     <label for="<?= $fieldID ?>">Start Date</label>
-    <input type="text" class="form-control" name="<?= $fieldID ?>" id="<?= $fieldID ?>"
+    <input type="text" class="form-control js-date-field" name="<?= $fieldID ?>" id="<?= $fieldID ?>"
         aria-describedby="<?= $fieldID ?>" maxlength="10" value="{{ $course->start_date ?? old($fieldID) }}"
-        placeholder="MM/DD/YYYY">
+        placeholder="MM/DD/YYYY" autocomplete="off">
     @error($fieldID)
     <div class="text-danger">{{ $message }}</div>
     @enderror

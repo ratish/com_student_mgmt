@@ -19,9 +19,9 @@
 <?php $fieldID = 'matriculationDate'; ?>
 <div class="form-group">
     <label for="<?= $fieldID ?>">Matriculation Date</label>
-    <input type="text" class="form-control" name="<?= $fieldID ?>" id="<?= $fieldID ?>"
+    <input type="text" class="form-control js-date-field" name="<?= $fieldID ?>" id="<?= $fieldID ?>"
         aria-describedby="<?= $fieldID ?>" maxlength="10" value="{{ $student->matriculation_date ?? old($fieldID) }}"
-        placeholder="MM/DD/YYYY">
+        placeholder="MM/DD/YYYY" autocomplete="off">
     @error($fieldID)
     <div class="text-danger">{{ $message }}</div>
     @enderror

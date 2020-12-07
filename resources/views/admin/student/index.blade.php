@@ -3,9 +3,10 @@
 <div class="card">
     <div class="card-body">
         @if(session('feedback'))
-        <div class="alert alert-success">{{ session('feedback') }}</div>
+        <div class="alert alert-success"><i class="fas fa-check fa-lg"></i> {{ session('feedback') }}</div>
         @endif
-        <div class="float-right"><a href="{{ url('students/create') }}" class="btn btn-primary">Add New Student</a>
+        <div class="float-right"><a href="{{ url('students/create') }}" class="btn btn-primary"><i
+                    class="fas fa-user-plus fa-lg"></i> Add New Student</a>
         </div>
         <h4 class="card-title">Current Students</h4>
         <table class="table">
@@ -30,7 +31,10 @@
                     <td>{{ $student->last_name }}</td>
                     <td>{{ date('m/d/Y', strtotime($student->matriculation_date)) }}</td>
                     <td>{{ ($student->currently_enrolled == 'y') ? 'Yes' : 'No' }}</td>
-                    <td><a href="{{ url('students/' . $student->id . '/edit') }}">Edit</a></td>
+                    <td><a href="{{ url('students/' . $student->id . '/edit') }}" class="btn btn-secondary"><i
+                                class="fas fa-user-edit"></i>
+                            Edit</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

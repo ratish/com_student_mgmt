@@ -18,6 +18,10 @@
                 @yield('body_contents')
             </div>
         </div>
+        <footer class="fixed-bottom text-center bg-light py-2">
+            <span>Student Management System</span>
+            <a href="https://github.com/ratish/com_student_mgmt"><i class="fab fa-github fa-lg"></i></a>
+        </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

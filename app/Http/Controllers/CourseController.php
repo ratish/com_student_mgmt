@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Http\Requests\CourseFormRequest;
 
@@ -41,18 +40,8 @@ class CourseController extends Controller
         $course->save();
 
         $request->session()->flash('feedback', 'Course added successfully!');
+        
         return redirect('courses');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -65,6 +54,7 @@ class CourseController extends Controller
     {
         $course = course::where('id', $id)->first();
         $course->start_date = date('m/d/Y', strtotime($course->start_date));
+
         return view('admin.course.edit', [
             'id' => $id,
             'course' => $course
@@ -84,18 +74,8 @@ class CourseController extends Controller
         $course = $this->formatCourseData($course, $request);
         $course->save();
         $request->session()->flash('feedback', 'Course updated successfully!');
-        return redirect('courses');
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect('courses');
     }
 
     private function formatCourseData($course, $request)

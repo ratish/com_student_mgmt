@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EnrollmentController;
 
 Route::get('/', function () {
     return view('admin/dashboard');
@@ -30,3 +31,8 @@ Route::get('courses/create', [CourseController::class, 'create']);
 Route::post('courses', [CourseController::class, 'store']);
 Route::get('courses/{id}/edit', [CourseController::class, 'edit']);
 Route::put('courses/{id}', [CourseController::class, 'update']);
+
+Route::get('enrollments/{course_id}', [EnrollmentController::class, 'index']);
+Route::get('enrollments/{course_id}/create', [EnrollmentController::class, 'create']);
+Route::post('enrollments/{course_id}/store', [EnrollmentController::class, 'store']);
+Route::delete('enrollments/{course_id}/unenroll/{student_id}', [EnrollmentController::class, 'destroy']);

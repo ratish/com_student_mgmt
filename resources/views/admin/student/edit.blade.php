@@ -1,5 +1,6 @@
 @extends('layouts.admin_template')
 @section('page_contents')
+<x-back-button :url="url('students')">Back to Current Students</x-back-button>
 <div class="card mt-4">
     <div class="card-header">Edit Student</div>
     <div class="card-body">

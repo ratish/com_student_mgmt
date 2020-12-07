@@ -7,7 +7,7 @@
         @endif
         <div class="float-right"><a href="{{ url('courses/create') }}" class="btn btn-primary">Add New Course</a>
         </div>
-        <h4 class="card-title">List of Current Courses</h4>
+        <h4 class="card-title">Current Courses</h4>
         <table class="table">
             <thead>
                 <tr>
@@ -30,7 +30,10 @@
                     <td>{{ $course->course_description }}</td>
                     <td>{{ date('m/d/Y', strtotime($course->start_date)) }}</td>
                     <td>{{ $course->weeks }}</td>
-                    <td><a href="{{ url('courses/' . $course->id . '/edit') }}">Edit</a></td>
+                    <td>
+                        <a href="{{ url('courses/' . $course->id . '/edit') }}">Edit</a> |
+                        <a href="{{ url('enrollments/' . $course->id) }}">Enrolled Students</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

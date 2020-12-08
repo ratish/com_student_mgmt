@@ -1,10 +1,5 @@
 @extends('layouts.core_template')
 @section('body_contents')
-<div class="row">
-    <div class="col-sm border-bottom">
-        <h1>{{ config('app.name') }}</h1>
-    </div>
-</div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#adminNavBar"
         aria-controls="adminNavBar" aria-expanded="false" aria-label="Toggle navigation">

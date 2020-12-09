@@ -31,9 +31,12 @@
                     <td>{{ $student->last_name }}</td>
                     <td>{{ date('m/d/Y', strtotime($student->matriculation_date)) }}</td>
                     <td>{{ ($student->currently_enrolled == 'y') ? 'Yes' : 'No' }}</td>
-                    <td><a href="{{ url('students/' . $student->id . '/edit') }}" class="btn btn-secondary"><i
+                    <td>
+                        <a href="{{ url('students/' . $student->id . '/edit') }}" class="btn btn-secondary btn-sm"><i
                                 class="fas fa-user-edit"></i>
                             Edit</a>
+                        <a href="{{ url('students/' . $student->id . '/enrollments') }}" class=" btn btn-dark btn-sm"><i
+                                class="fas fa-book"></i> Enrolled Courses</a>
                     </td>
                 </tr>
                 @endforeach

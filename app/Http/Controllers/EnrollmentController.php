@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Student;
 use App\Http\Requests\EnrollmentFormRequest;
@@ -17,6 +16,7 @@ class EnrollmentController extends Controller
     public function index($course_id)
     {
         $course = Course::find($course_id);
+
         return view('admin.enrollment.index', ['course' => $course]);
     }
 
@@ -51,6 +51,7 @@ class EnrollmentController extends Controller
         $course->students()->attach($studentsToEnroll);
 
         $request->session()->flash('feedback', 'Student(s) enrolled to course successfully!');
+
         return redirect('enrollments/' . $courseID);
     }
 
@@ -66,6 +67,7 @@ class EnrollmentController extends Controller
         $course->students()->detach($studentID);
 
         Request()->session()->flash('feedback', 'Student unenrolled from course successfully!');
+
         return redirect('enrollments/' . $courseID);
     }
 }

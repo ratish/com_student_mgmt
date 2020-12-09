@@ -40,6 +40,7 @@ class StudentController extends Controller
         $student->save();
 
         $request->session()->flash('feedback', 'Student added successfully!');
+
         return redirect('students');
     }
 
@@ -53,6 +54,7 @@ class StudentController extends Controller
     {
         $student = Student::where('id', $id)->first();
         $student->matriculation_date = date('m/d/Y', strtotime($student->matriculation_date));
+
         return view('admin.student.edit', [
             'id' => $id,
             'student' => $student
@@ -72,6 +74,7 @@ class StudentController extends Controller
         $student = $this->formatStudentData($student, $request);
         $student->save();
         $request->session()->flash('feedback', 'Student updated successfully!');
+
         return redirect('students');
     }
 
@@ -83,5 +86,12 @@ class StudentController extends Controller
         $student->currently_enrolled = $request->input('currentlyEnrolled');
 
         return $student;
+    }
+
+    public function enrollments($id)
+    {
+        $student = Student::find($id);
+
+        return view('admin.student.enrollment', ['student' => $student]);
     }
 }

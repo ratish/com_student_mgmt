@@ -25,6 +25,7 @@ Route::get('students/create', [StudentController::class, 'create']);
 Route::post('students', [StudentController::class, 'store']);
 Route::get('students/{id}/edit', [StudentController::class, 'edit']);
 Route::put('students/{id}', [StudentController::class, 'update']);
+Route::get('students/{id}/enrollments', [StudentController::class, 'enrollments']);
 
 Route::get('courses', [CourseController::class, 'index']);
 Route::get('courses/create', [CourseController::class, 'create']);
